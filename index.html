@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+<!-- jQuery library (served from Google) -->
+
+<link href="js/jquery.bxslider.css" rel="stylesheet" />
+<!-- <script src="js/googlejax.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- bxSlider Javascript file -->
+<!-- <script src="js/jquery.bxslider.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<!-- bxSlider CSS file -->
+
+<link href="styles/stylesheet.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+
+
+<style type="text/css">
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+</style>
+<meta charset="UTF-8">
+
+<script src="js/jquery.form.js" type="text/javascript"></script>
+<script src="js/jquery.validate.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#mensaje").hide();
+			$("#formulario").validate({
+				event: "blur",rules: {'email': "required email"},
+				messages: {'email': "<span style='font-size: 8pt; color:red;'>*Requerido</span>"},
+				debug: true,errorElement: "label",
+				submitHandler: function(form){
+					$("#mensaje").show();
+					$("#mensaje").html("<strong>Datos enviados, gracias!</strong>");
+					 $.ajax({
+						type: "POST",
+						url:"enviacorreonews.php",
+           data: $("#formulario").serialize(), // Adjuntar los campos del formulario enviado.
+           success: function(data)
+           {
+               $("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+           }
+         });
+ 
+    return false; // Evitar ejecutar el submit del formulario.
+				}
+			});
+			
+$("#mensajecontact").hide();
+			$("#formularionews").validate({
+				event: "blur",rules: {'emailnews': "required email"},
+				messages: {'emailnews': "<span style='font-size: 8pt; color:#F00;'>*Requerido</span>"},
+				debug: true,errorElement: "label",
+				submitHandler: function(form){
+					$("#mensajecontact").show();
+					$("#mensajecontact").html("<strong>Sus datos han sido enviados, gracias!</strong>");
+					 $.ajax({
+						type: "POST",
+						url:"enviacorreonews2.php",
+           data: $("#formularionews").serialize(), // Adjuntar los campos del formulario enviado.
+           success: function(data)
+           {
+               $("#respuesta1").html(data); // Mostrar la respuestas del script PHP.
+           }
+         });
+ 
+    return false; // Evitar ejecutar el submit del formulario.
+				}
+			});
+			
+			
+	});	
+</script>
+ 
+<title>TUMSA::Conexiones Firmes</title>
+</head>
+<body>
+<div style="position: fixed; width:100%; z-index:1000 !important; background:#FFFFFF;">
+<div style="position:relative; align-content:center; background:#FFFFFF;">
+<div class="ventas"><a href="mailto:ventas@tumsa.com.mx"><img src="images/ventas.jpg" width="" height="" alt="" class="ventasimg"/></a></div>
+<div class="ventasch"><a href="mailto:ventas@tumsa.com.mx"><img src="images/ventasch.jpg" width="" height="" alt="" class="ventasimg"/></a></div>
+<div class="logos"><a href="index.html"><img src="images/logo.jpg" alt="" class="logo"/></a></div>
+<div class="telefonoch"><img src="images/telefonoch.jpg" style="margin-left:5%;" width="" height="" alt="" class="telefonoimg"/>
+<div class="idiomaimg"><a href="indexe.html"><img src="images/english.png" width="54" height="24"></a></div>
+</div>
+<div class="telefono"><img src="images/telefono.jpg" width="" height="" alt="" class="telefonoimg"/>
+<div class="idiomaimg"><a href="indexe.html"><img src="images/english.png" width="54" height="24"></a></div>
+</div>
+</div>
+<div class="topnav" id="myTopnav"> 
+  <a href="tumsa.html" class="linkmenu">TUMSA</a>
+  <a href="servicios.html" class="linkmenu">SERVICIOS</a>
+  <a href="unidades.html" class="linkmenu">UNIDADES</a>
+  <a href="seguridad.html" class="linkmenu">SEGURIDAD</a>
+  <a href="rastreo.html" class="linkmenu">RASTREO</a>
+  <a href="contacto.html" class="linkmenu">CONTACTO</a>
+  <a href="javascript:void(0);" style="font-size:36px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+</div>
+
+<div class="gridcontainer">
+    <div class="gridwrapper">
+        <div style="position:relative; z-index:0;">
+            <div class="slider">
+            <ul class="bxslider">
+            <li><img class="banner1" src="" width="100%" height="" alt="" title="<span class='titbanner' style='text-shadow: 3px 3px 3px #282828;'> Estamos donde y <br> cuando nos necesites...<br></span><span class='titbannerc' style='text-shadow: 3px 3px 3px #282828;'>Si nos comprometemos en algo... ¡Cumplimos!</span>"/></li>
+            <li><img class="banner2" width="100%" height="" alt="" title="<span class='titbanner' style='text-shadow: 3px 3px 3px #282828;'>La definición de nuestro <br>negocio es simple… </span><span class='titbannerc' style='text-shadow: 3px 3px 3px #282828;'>Transportamos lo más importante de tu negocio como si fuera nuestro
+</span>"/></li>
+  			</ul>
+             </div>
+        </div>
+        <div class="gridbox" style="width:100%; position:relative; top:0px;"> 
+
+        </div>
+    </div>
+    <div class="gridwrapper" style="background:#00a1e1; height:650px;">
+        <div class="gridbox" style="width: 26%; position: relative; padding-left: 5%; padding-top: 4%;">
+		<p class="blanco titbannerc">Líder en
+Servicios de
+Transporte<br><br>
+<img src="images/cuadro.jpg" width="64" height="65"></p>
+        </div>
+        <div class="gridbox" style="width:60%; position:relative; top:0px;"> 
+		<p class="txtder">Empresa mexicana con más de 29 años de experiencia en el mercado de la transportación terrestre nacional. Proporcionamos servicios cubriendo las necesidades primordiales de nuestros clientes en transporte de carga, a través de servicios: 
+       
+        <table width="60%" border="0" cellspacing="0" cellpadding="10" align="center" class="txtabla">
+  <tr>
+    <td>LTL (Carga Consolidada)</td>
+    <td>Servicios Dedicados</td>
+  </tr>
+  <tr>
+    <td>FTL (Carga Completa)</td>
+    <td>Transporte Contenedores</td>
+  </tr>
+  <tr>
+    <td>Carga Refrigerada</td>
+    <td>Servicios de Paquetería</td>
+  </tr>
+</table>
+        </div>
+    </div>
+
+  <div class="dimghome">
+        <div class="gridbox imghome"> <a href="unidades.html"><img src="images/unidades.jpg" alt="unidades" class="imgunidad"></a> </div>
+        <div class="gridbox imghome"> <a href="cobertura.html"><img src="images/unidades2.jpg" alt="cobertura" class="imgunidad"></a> </div>
+    </div>
+
+    <div style="background:#FFF; height:200px;">
+        <div style="width:100%;position:relative; margin:-40px auto;">
+		<p class="ptxtazul">Contamos con la más alta tecnología en rastreo satelital</p>
+        </div>
+    </div>
+
+    <!-- <a href="rastreo.html"> -->
+    <div style="width:100%; position:relative; height:309px; background:url(images/rastreo.jpg) no-repeat; background-size:cover;">
+		<p style="position:absolute; color:#FFF; font-size:2.9em; font-weight:bold; bottom:0px; width:100%; text-align:center;">Rastreo de Mercancia</p>
+    </div></a>
+
+    <div style="background:#191f6c; height:220px;">
+        <div class="gridbox" style="width:100%;position:relative; margin:0 auto;"><a href="registro.html">
+		<p class="fuentegde" style="color:#FFF; font-weight:bold; width:100%; text-align:center;">Trabajemos juntos en tu proyecto</p>
+		<p class="fuentepq" style="color:#FFF; width:100%;  text-align:center;">Cotiza tu proyecto, será un gusto atenderte</p></a>
+        </div>
+    </div>
+    
+  <div class="gridwrapper footer">
+        <div class="gridbox" style="width: 100%; position: relative; text-align: center; font-size: medium;">
+        <div class="footer1">&reg; TUMSA Derehos Reservados. 2018</div>
+        <div class="footer2"><a href="registro.html" style="text-decoration:none;color:#191f6c;">¿Quieres recibir novedades y noticias de TUMSA? Registrate aquí</a></div>
+        <div class="footer3"><a href="privacidad.html" style="text-decoration:none;color:#191f6c;">Aviso de Privacidad</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="politica.html" style="text-decoration:none;color:#191f6c;">Política Global de Integridad</a></div>
+      </div>
+    </div>
+
+
+</div>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+$('.bxslider').bxSlider({
+  minSlides: 1,
+  maxSlides: 1,
+  slideWidth: 0,
+  slideMargin: 0,
+  adaptiveHeight: true,
+    auto: true,
+	captions: true
+});
+</script>
+</body>
+</html>
+
+
